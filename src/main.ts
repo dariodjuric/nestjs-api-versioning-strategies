@@ -7,6 +7,7 @@ import { FastifyRequest } from 'fastify';
 const DEFAULT_VERSION = '1';
 
 const extractor = (request: FastifyRequest): string | string[] => {
+  // You'll always get your headers in lowercase
   const requestedVersion =
     <string>request.headers['x-api-version'] ?? DEFAULT_VERSION;
 
